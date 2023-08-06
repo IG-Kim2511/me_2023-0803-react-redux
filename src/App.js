@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import CartPage from './CartPage';
+import cartReducer from './cartReducer';
+
+const store = createStore(cartReducer, { cart: [] });
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+
+
+
+      <h1>coding apple</h1>
+
+      
+      <h1>Tutorials Dev</h1>
+
+
+      <h1>ai-redux</h1>      
+        <CartPage />
+      </div>
+    </Provider>
   );
 }
 
